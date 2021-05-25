@@ -1,0 +1,28 @@
+@use 'abstract/colors';
+@use 'layout/containers';
+@use 'typography/fonts';
+@use 'layout/card';
+
+html,
+body {
+  background: {
+    image: colors.$background-gradient;
+    attachment: fixed;
+  }
+  font-family: fonts.$family;
+}
+
+#upper-section {
+  @include containers.basic-container(column);
+  h1 {
+    font-weight: lighter;
+  }
+  h4 {
+    font-style: italic;
+    font-weight: normal;
+  }
+}
+
+#bottom-section {
+  @include containers.basic-container(row, initial, center);
+}

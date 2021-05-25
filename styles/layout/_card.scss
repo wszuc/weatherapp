@@ -1,0 +1,9 @@
+@use 'containers';
+
+.card {
+  @include containers.basic-container(column);
+  margin: containers.$std-margin;
+  padding: containers.$std-padding;
+  border: solid black thin;
+  border-radius: containers.$std-radius;
+}

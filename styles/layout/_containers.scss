@@ -1,0 +1,49 @@
+@mixin basic-container($direction: row, $justify: center, $align: center) {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin transition($type) {
+  transition: $type 0.3s;
+}
+
+$std-padding: 5px;
+$std-margin: 20px;
+$std-radius: 3px;
+
+form {
+  display: flex;
+  flex: {
+    direction: column;
+  }
+  padding: 15px 0;
+
+  input {
+    border: none;
+    border-bottom: solid white thin;
+    background-color: transparent;
+    padding: $std-padding;
+    font-family: inherit;
+    @include transition(border-color);
+    &:focus {
+      border: inherit;
+      border-color: teal;
+    }
+  }
+  button {
+    background-color: purple;
+    color: white;
+    margin-top: 15px;
+    border: none;
+    border-radius: $std-radius;
+    padding: $std-padding;
+    font-family: inherit;
+    @include transition(background-color);
+    &:hover {
+      background-color: rgb(204, 0, 204);
+    }
+  }
+}
