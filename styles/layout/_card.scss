@@ -1,9 +1,17 @@
 @use 'containers';
+@use '../abstract/colors';
+
+$std-card-width: 100px;
+$std-card-height: 200px;
 
 .card {
-  @include containers.basic-container(column);
+  @include containers.basic-container(column, center, center, no-wrap);
   margin: containers.$std-margin;
   padding: containers.$std-padding;
-  border: solid black thin;
-  border-radius: containers.$std-radius;
+  border: none;
+  border-radius: containers.$ext-radius;
+  box-shadow: -8px 8px colors.$white-shadow;
+  width: $std-card-width;
+  height: $std-card-height;
+  background-color: colors.$white;
 }

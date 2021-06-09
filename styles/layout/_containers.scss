@@ -1,6 +1,11 @@
-@mixin basic-container($direction: row, $justify: center, $align: center) {
+@mixin basic-container(
+  $direction: row,
+  $justify: center,
+  $align: center,
+  $wrap: wrap
+) {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: $wrap;
   flex-direction: $direction;
   justify-content: $justify;
   align-items: $align;
@@ -13,6 +18,7 @@
 $std-padding: 5px;
 $std-margin: 20px;
 $std-radius: 3px;
+$ext-radius: 10px;
 
 form {
   display: flex;
@@ -29,7 +35,7 @@ form {
     font-family: inherit;
     @include transition(border-color);
     &:focus {
-      border: inherit;
+      outline: none;
       border-color: teal;
     }
   }
